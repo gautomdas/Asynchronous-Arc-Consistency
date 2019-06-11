@@ -1,4 +1,3 @@
-
 ; The first part of the progam requires the user to enter in the local file
 ; location of the folder. This will only be asked every run by storing a key
 ; globally called filePath
@@ -28,7 +27,7 @@
 
 ; This part of the program takes an input file, and then begins to convert the 
 ; text file lines to a data format the program can work with.
-(setf fileName "puzzleOne.txt")
+(setf fileName "puzzleTwo.txt")
 
 
 (setq domains nil)
@@ -239,8 +238,11 @@
     (if (not flag)
         (setf true combination))))
 
-(print true)
-
-(defun eve(func)
-  (eval (read-from-string func)))
-
+(format t "Domain Titles: ")
+(format t "~a" domtitles)
+(format t "Domain Grid: ")
+(format t "~a" domgrid)
+(format t "Solution: ")
+(format t "~a" true)
+(format t "Match number with order in domain grid.")
+(format t "")
