@@ -1,0 +1,15 @@
+3
+4
+
+name
+alan fred sam ronald
+order
+first second third fourth
+age
+13 14 15 16
+
+4
+name is ronald find age == 13
+name is sam find order == second
+order is first find age > name is sam find age
+name is alan find age + 1 == order is third find age

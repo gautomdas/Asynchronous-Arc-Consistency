@@ -1,0 +1,28 @@
+4
+5
+
+collector
+odette pam ray sal ted
+price
+125000 150000 175000 200000 225000
+year
+1821 1866 1879 1915 1927
+stamp
+bull cap danish frog inverted
+
+10
+collector is sal find price + 75000 == year is 1866 find price
+collector is odette find price - 25000 == stamp is bull find price
+stamp is frog find price - 50000 == collector is ted find price
+collector is ray find year != 1879
+stamp is frog find year != 1821
+year is 1821 find price > year is 1927 find price
+collector is ted find year != 1821
+stamp is cap find price == 200000
+stamp is frog find price == 225000
+diff
+stamp is danish find collector
+pam
+odette
+sal
+price is 225000 find collector

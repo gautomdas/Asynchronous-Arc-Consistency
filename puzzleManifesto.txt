@@ -1,0 +1,77 @@
+# of different domains
+# of variables in each domain
+
+
+domain 1 name
+domain 1 variables
+
+domain 2 name
+domain 2 variables
+
+domain 3 name
+domain 3 variables
+
+.
+.
+.
+
+domain n name
+domain n variables
+
+***---break---***
+
+
+constraint 1
+constraint 2
+constraint 3
+.
+.
+.
+constraint n
+
+__________
+
+This would be the end of a normal file. Below we discuss how a constraint should be written:
+
+known - this is the known domain's name
+unknown - this is the desired domain's name for comparison
+value - this is the value of the known domain
+
+One side of the constraint, which we call a truth,  would look as follows:
+
+known is value find unknown
+
+Two truths are connected by a generic operator (==, >, <, !=) and would look as follows
+
+truth operator truth
+
+Additionally, if equivalences are shifted by a value for example, additional operations may be added to the the truth:
+
+truth + 12 > truth
+
+Examples of constraints are:
+
+name is Ronald find age == 13
+
+or
+
+order is first find age > name is Sam find age
+-> translated to english this would be "The first order or position is older than Sam."
+
+
+An additional constraint known as the diff constraint is often used by in logic when stating N variables of different domains are independent. An example of this constraint:
+
+English: The five people are the owner of Danish Stamps, Pam, Odette, Sal, and the owner of a collection worth 225000
+
+The converted test file constraint would be
+
+diff - saying all N groups are different
+unknown - the common variable to be solved for
+
+diff unknown
+truth 1
+truth 2
+.
+.
+.
+truth 3

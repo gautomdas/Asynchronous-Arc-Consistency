@@ -1,36 +1,30 @@
-# AAC3
+# Additional Documentation
 
-The name of this project is the asynchronous arc consistency [algorithm] #3. The generic version for ac3 algorithm can be found in *Artificial Intelligence: A Modern Approach*[^1]. 
+The purpose of this additional documentation is to provide the user with information regarding the use and features of this program.
 
-An overview of the files found in this project:
+## Puzzles Used
+
+The first puzzle used was from brainzilla[^1]:
+
+![image-20190606020558721](/Users/das/Library/Application Support/typora-user-images/image-20190606020558721.png)
+
+Although this puzzle is quite simple, using the simple logic from this first puzzle, the same method can be applied to all puzzles.
+
+The second puzzle was courtesy of PuzzleBaron[^2]  looked similar to the one below, however, I did not realize that once you actually solve the puzzle and submit you can never access the same puzzle again:
+
+![image-20190606025859351](/Users/das/Library/Application Support/typora-user-images/image-20190606025859351.png)
+
+![image-20190606022118294](/Users/das/Library/Application Support/typora-user-images/image-20190606022118294.png)
+
+Record of the puzzle statistics.
+
+
+
+[^ 1]: https://www.brainzilla.com/logic/logic-grid/kart-racing/
+[^2]: https://logic.puzzlebaron.com/gameover.php?uid2=cbde0594a5535b324b40ce7eb46e2d10
+
+## Folder and Files Overview
 
 /dependencies - contains all the additional packages need to run the program.
 
 /dependencies/quicklisp - package manager for lisp.
-
-
-
-General Project Plan:
-
-```flow
-st=>start: Input Logic Puzzle Strings
-op=>operation: Tokenize Strings in Constraints
-op2=>operation: Generate Constraint Search Space
-op3=>end: Use AC3 Algorithm w/ Async
-e=>end
-
-st->op->op2->op3->op4
-```
-
-
-
-```
-
-```
-
-
-
-
-
-[^1]:[Russell, Stuart](https://en.wikipedia.org/wiki/Stuart_J._Russell); [Norvig, Peter](https://en.wikipedia.org/wiki/Peter_Norvig). *Artificial Intelligence: A Modern Approach*. Prentice Hall.
-
