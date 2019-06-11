@@ -171,19 +171,20 @@
       (dotimes (n constraintNumb)
         (progn
           (setf current (read-line file))
+          (print current)
           (if (not (equalp current "diff")) (addstring current)
             (loop for line = (read-line file nil :eof) 
               until (eq line :eof)
               do (setf totA (cons line totA))))))
+
       (if (not (null totA))
           (setf diffcase (lambda (perms) 
-                          (progn 
-                            (setf listVals nil)
+                           (let ((listVals nil))
                             (dolist (element totA)
                               (progn 
                                 (if (in-list "is" (uiop:split-string element :separator " "))
                                     (setf listVals (cons (eval (read-from-string (totest element))) listVals)) (setf listVals (cons element listVals)))))
-                            (diff (car listVals) (cdr listVals))))))
+                             (diff (car listVals) (cdr listVals))))))
     (close file)))
 (readFile)
 
@@ -221,19 +222,19 @@
 (setf true nil)
 (defparameter og (nth 5 comb))
 
+(format t "~a" "Data Preparation Completed")
+
 (dolist (combination comb)
   (progn 
     (setf flag nil)
+    (defparameter og combination)
     (if (compiled-function-p diffcase) (if (not (funcall diffcase combination)) (setf flag t)))
        (dolist (rule totstrings)
          (progn
-          (if (equalp (mod counter 100000) 0) (print "+"))
           (setf counter (+ 1 counter))
           (if (not flag) 
               (progn
                 (defparameter og combination)
-                (print rule)
-                (print (funcall (toConstraint rule) combination))
                 (if (not (funcall (toConstraint rule) combination)) (setf flag t))))))
     (if (not flag)
         (setf true combination))))
